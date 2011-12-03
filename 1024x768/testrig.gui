@@ -51,7 +51,7 @@
   <tokens>
     <token name="WithPersist" value="default" persist="1" />
     <token name="NoPersist" value="0" />
-    <token name="counter" value="0" />
+    <token name="counter" value="0" persist="1" />
   </tokens>
   <page name="Buttons_1" j="0" transition="" subtype="" time="0" ease="">
     <portrait t="bg_image">
