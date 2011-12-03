@@ -1,0 +1,392 @@
+<gui>
+  <properties>
+    <project>Test Rig</project>
+    <designer>CommandFusion</designer>
+    <size>
+      <portrait width="768" height="1024" />
+      <landscape width="1024" height="768" />
+    </size>
+    <controlsystem connectionStatus="1" disconnectionStatus="2" offlinequeue="0">
+      <hostname>192.168.0.10</hostname>
+      <commandPort>8020</commandPort>
+    </controlsystem>
+    <imagefolder>
+    </imagefolder>
+    <debug loaderrors="1" connectionerrors="1" />
+  </properties>
+  <systems>
+    <system name="Loopback" ip="127.0.0.1" port="10210" protocol="tcp" alwayson="1" offlinequeue="0" accept="0" acceptBroadcasts="0" ssl="0" maxconnections="0" heartbeatRx="" heartbeatTx="" heartbeatMode="-1" eom="" connectionStatus="0" disconnectionStatus="0" startupCmd="TestJoinValueAssignment">
+      <cmd name="TestJoinValueAssignment" target="d17931" value="1">1</cmd>
+      <cmd name="CounterIncrement">count={{counter+1}}</cmd>
+      <cmd name="SliderLevel">level=[sliderval]</cmd>
+      <fb name="CounterFB" regex="count=(\d+)">
+        <group index="1" name="" datatype="s" target="s100" />
+        <group index="1" name="counter" datatype="s" target="e0" settoken="1" />
+      </fb>
+      <fb name="SliderFB" regex="level=([-]?\d+)">
+        <group index="1" name="" datatype="s" target="s200" />
+      </fb>
+    </system>
+  </systems>
+  <themes>
+    <theme type="background" name=".SolidColor"><![CDATA[background-color: #008080;]]></theme>
+    <theme type="background" name=".bg_image"><![CDATA[ background-image: url(bg_portrait.png); background-repeat: no-repeat;]]></theme>
+    <theme type="button" name=".btn_solidcolor[state='0']"><![CDATA[padding: 0px 0px 0px 0px;  filter: Alpha(Opacity=100); -moz-opacity:1; opacity: 1; background-color: #FF8080; text-shadow: rgba(0,0,0,1) 0px 1px 0px; color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".btn_solidcolor[state='1']"><![CDATA[padding: 0px 0px 0px 0px;  filter: Alpha(Opacity=100); -moz-opacity:1; opacity: 1; background-color: Silver; text-shadow: rgba(255,255,255,1) 0px 1px 0px; color: Black; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="text" name=".text_l"><![CDATA[ text-shadow: rgba(0,0,0,0.78) 0px 1px 0px; color: White; font-size: 16px; font-family: 'Arial'; text-align: left; vertical-align: middle; font-weight: bold; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".text_c_sml"><![CDATA[ text-shadow: rgba(0,0,0,0.78) 0px 1px 0px; color: White; font-size: 12px; font-family: 'Arial'; text-align: center; vertical-align: middle; font-weight: bold; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".text_r_sml"><![CDATA[ text-shadow: rgba(0,0,0,0.78) 0px 1px 0px; color: White; font-size: 12px; font-family: 'Arial'; text-align: right; vertical-align: middle; font-weight: bold; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".text_l_sml"><![CDATA[ text-shadow: rgba(0,0,0,0.78) 0px 1px 0px; color: White; font-size: 12px; font-family: 'Arial'; text-align: left; vertical-align: middle; font-weight: bold; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="button" name=".btn_image[state='0']"><![CDATA[padding: 0px 0px 0px 0px; background-image: url(top_btn_single_off.png); text-shadow: rgba(0,0,0,1) 0px 1px 0px; color: White; font-size: 12px; font-family: 'Verdana'; font-weight: bold; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".btn_image[state='1']"><![CDATA[padding: 2px 0px 0px 0px; background-image: url(top_btn_single_on.png); text-shadow: rgba(0,0,0,1) 0px 1px 0px; color: White; font-size: 12px; font-family: 'Verdana'; font-weight: bold; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".btn_image_stretchy[state='0']"><![CDATA[padding: 0px 19px 0px 19px; -webkit-border-image: url(top_btn_single_off.png) 0 19 0 19; text-shadow: rgba(0,0,0,1) 0px 1px 0px; color: White; font-size: 12px; font-family: 'Verdana'; font-weight: bold; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".btn_image_stretchy[state='1']"><![CDATA[padding: 2px 19px 0px 19px; -webkit-border-image: url(top_btn_single_on.png) 2 19 0 19; text-shadow: rgba(0,0,0,1) 0px 1px 0px; color: White; font-size: 12px; font-family: 'Verdana'; font-weight: bold; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="gauge" name=".horizontal_bothimages[state='0']"><![CDATA[ background-image: url(gauge_h_lrg_off.png);]]></theme>
+    <theme type="gauge" name=".horizontal_bothimages[state='1']"><![CDATA[ background-image: url(gauge_h_lrg_on.png);]]></theme>
+    <theme type="gauge" name=".horizontal_inactiveimage[state='0']"><![CDATA[ background-image: url(gauge_h_lrg_off.png);]]></theme>
+    <theme type="gauge" name=".horizontal_inactiveimage[state='1']"><![CDATA[]]></theme>
+    <theme type="gauge" name=".vertical_bothimages[state='0']"><![CDATA[ background-image: url(gauge_v_lrg_off.png);]]></theme>
+    <theme type="gauge" name=".vertical_bothimages[state='1']"><![CDATA[ background-image: url(gauge_v_lrg_on.png);]]></theme>
+  </themes>
+  <tokens>
+    <token name="WithPersist" value="default" persist="1" />
+    <token name="NoPersist" value="0" />
+    <token name="counter" value="0" />
+  </tokens>
+  <page name="Buttons_1" j="0" transition="" subtype="" time="0" ease="">
+    <portrait t="bg_image">
+      <btn j="0" x="16" y="57" w="90" h="50" t="btn_solidcolor" flip="None" sim="0" l="0" s="1">
+        <inactive s="0">
+        </inactive>
+        <active s="0">
+        </active>
+      </btn>
+      <txt j="0" x="15" y="11" w="753" h="44" t="text_l" wrap="False" l="0">Buttons, Solid Color, No Actions</txt>
+      <txt j="0" x="15" y="111" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 0
+Sim: 0</txt>
+      <btn j="0" x="116" y="57" w="90" h="50" t="btn_solidcolor" flip="None" sim="1" l="0" s="1">
+        <inactive s="0">
+        </inactive>
+        <active s="0">
+        </active>
+      </btn>
+      <txt j="0" x="115" y="111" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 0
+Sim: 1</txt>
+      <btn j="100" x="216" y="57" w="90" h="50" t="btn_solidcolor" flip="None" sim="0" l="0" s="1">
+        <inactive s="0">test</inactive>
+        <active s="0">test</active>
+      </btn>
+      <txt j="0" x="215" y="111" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 100
+Sim: 0</txt>
+      <btn j="100" x="316" y="57" w="90" h="50" t="btn_solidcolor" flip="None" sim="1" l="0" s="1">
+        <inactive s="0">test</inactive>
+        <active s="0">test</active>
+      </btn>
+      <txt j="0" x="315" y="111" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 100
+Sim: 1</txt>
+      <btn j="0" x="16" y="197" w="90" h="50" t="btn_solidcolor" flip="None" sim="0" l="0" s="1" cmd="CounterIncrement">
+        <inactive s="0">
+        </inactive>
+        <active s="0">
+        </active>
+      </btn>
+      <txt j="0" x="15" y="151" w="753" h="44" t="text_l" wrap="False" l="0">Buttons, Solid Color, Increment Counter</txt>
+      <txt j="0" x="15" y="251" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 0
+Sim: 0
+Cmd</txt>
+      <btn j="0" x="116" y="197" w="90" h="50" t="btn_solidcolor" flip="None" sim="1" l="0" s="1" cmd="CounterIncrement" repeatdelay="150">
+        <inactive s="0">
+        </inactive>
+        <active s="0">
+        </active>
+      </btn>
+      <txt j="0" x="115" y="251" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 0
+Sim: 1
+Cmd Repeat</txt>
+      <btn j="100" x="216" y="197" w="90" h="50" t="btn_solidcolor" flip="None" sim="0" l="0" s="1" js="CF.getJoin(CF.GlobalTokensJoin, function(j,v,t){CF.setToken(CF.GlobalTokensJoin, &quot;counter&quot;, parseInt(t[&quot;counter&quot;], 10)+1); CF.setJoin(&quot;s100&quot;, parseInt(t[&quot;counter&quot;], 10)+1);});">
+        <inactive s="0">test</inactive>
+        <active s="0">test</active>
+      </btn>
+      <txt j="0" x="215" y="251" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 100
+Sim: 0
+JS</txt>
+      <btn j="100" x="316" y="197" w="90" h="50" t="btn_solidcolor" flip="None" sim="1" l="0" s="1" js="CF.getJoin(CF.GlobalTokensJoin, function(j,v,t){CF.setToken(CF.GlobalTokensJoin, &quot;counter&quot;, parseInt(t[&quot;counter&quot;], 10)+1); CF.setJoin(&quot;s100&quot;, parseInt(t[&quot;counter&quot;], 10)+1);});" repeatdelay="150">
+        <inactive s="0">test</inactive>
+        <active s="0">test</active>
+      </btn>
+      <txt j="0" x="315" y="251" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 100
+Sim: 1
+JS Repeat</txt>
+      <txt j="0" x="615" y="21" w="90" h="28" t="text_r_sml" wrap="False" l="0">Counter:</txt>
+      <txt j="100" x="715" y="21" w="50" h="28" t="text_l_sml" wrap="False" l="0">0</txt>
+      <btn j="0" x="16" y="347" w="72" h="43" t="btn_image" flip="None" sim="0" l="0" s="1" cmd="CounterIncrement">
+        <inactive s="0">test</inactive>
+        <active s="0">test</active>
+      </btn>
+      <txt j="0" x="15" y="301" w="753" h="44" t="text_l" wrap="False" l="0">Buttons, Images, Increment Counter</txt>
+      <txt j="0" x="15" y="401" w="90" h="64" t="text_c_sml" wrap="False" l="0">J: 0
+Sim: 0
+Cmd
+No Stretch</txt>
+      <btn j="0" x="116" y="347" w="72" h="43" t="btn_image" flip="None" sim="1" l="0" s="1" cmd="CounterIncrement" repeatdelay="150">
+        <inactive s="0">test</inactive>
+        <active s="0">test</active>
+      </btn>
+      <txt j="0" x="115" y="401" w="90" h="64" t="text_c_sml" wrap="False" l="0">J: 0
+Sim: 1
+Cmd Repeat
+No Stretch</txt>
+      <btn j="100" x="216" y="347" w="90" h="50" t="btn_image" flip="None" sim="0" l="0" s="1" js="CF.getJoin(CF.GlobalTokensJoin, function(j,v,t){CF.setToken(CF.GlobalTokensJoin, &quot;counter&quot;, parseInt(t[&quot;counter&quot;], 10)+1); CF.setJoin(&quot;s100&quot;, parseInt(t[&quot;counter&quot;], 10)+1);});">
+        <inactive s="0">test</inactive>
+        <active s="0">test</active>
+      </btn>
+      <txt j="0" x="215" y="401" w="90" h="64" t="text_c_sml" wrap="False" l="0">J: 100
+Sim: 0
+JS
+Stretch</txt>
+      <btn j="100" x="316" y="347" w="90" h="50" t="btn_image" flip="None" sim="1" l="0" s="1" js="CF.getJoin(CF.GlobalTokensJoin, function(j,v,t){CF.setToken(CF.GlobalTokensJoin, &quot;counter&quot;, parseInt(t[&quot;counter&quot;], 10)+1); CF.setJoin(&quot;s100&quot;, parseInt(t[&quot;counter&quot;], 10)+1);});" repeatdelay="150">
+        <inactive s="0">test</inactive>
+        <active s="0">test</active>
+      </btn>
+      <txt j="0" x="315" y="401" w="90" h="64" t="text_c_sml" wrap="False" l="0">J: 100
+Sim: 1
+JS Repeat
+Stretch</txt>
+      <btn j="100" x="426" y="347" w="110" h="43" t="btn_image_stretchy" flip="None" sim="0" l="0" s="1" js="CF.getJoin(CF.GlobalTokensJoin, function(j,v,t){CF.setToken(CF.GlobalTokensJoin, &quot;counter&quot;, parseInt(t[&quot;counter&quot;], 10)+1); CF.setJoin(&quot;s100&quot;, parseInt(t[&quot;counter&quot;], 10)+1);});">
+        <inactive s="0">test</inactive>
+        <active s="0">test</active>
+      </btn>
+      <txt j="0" x="425" y="401" w="110" h="64" t="text_c_sml" wrap="False" l="0">J: 100
+Sim: 0
+JS
+Stretch H</txt>
+      <btn j="100" x="546" y="347" w="110" h="50" t="btn_image_stretchy" flip="None" sim="1" l="0" s="1">
+        <actions>
+          <action>
+            <release delay="1000" js="CF.getJoin(CF.GlobalTokensJoin, function(j,v,t){CF.setToken(CF.GlobalTokensJoin, &quot;counter&quot;, parseInt(t[&quot;counter&quot;], 10)+1); CF.setJoin(&quot;s100&quot;, parseInt(t[&quot;counter&quot;], 10)+1);});" />
+          </action>
+        </actions>
+        <inactive s="0">test</inactive>
+        <active s="0">test</active>
+      </btn>
+      <txt j="0" x="545" y="401" w="110" h="64" t="text_c_sml" wrap="False" l="0">J: 100
+Sim: 1
+adv release, dly
+Stretch H+V</txt>
+      <btn j="0" x="16" y="507" w="72" h="43" t="btn_image" flip="None" sim="0" l="0" s="0" cmd="CounterIncrement">
+        <inactive s="0">test<img x="12" y="-1" w="43" h="43">transports_grey_power_off_25.png</img></inactive>
+        <active s="0">test<img x="12" y="-1" w="43" h="43">transports_grey_power_on_25.png</img></active>
+      </btn>
+      <txt j="0" x="15" y="461" w="753" h="44" t="text_l" wrap="False" l="0">Buttons, Images, Overlay Images, Increment Counter</txt>
+      <txt j="0" x="15" y="561" w="90" h="64" t="text_c_sml" wrap="False" l="0">J: 0
+Sim: 0
+Cmd
+No Stretch</txt>
+      <btn j="0" x="116" y="507" w="72" h="43" t="btn_image" flip="None" sim="1" l="0" s="0" cmd="CounterIncrement" repeatdelay="150">
+        <inactive s="0">test<img x="12" y="-1" w="43" h="43">transports_grey_power_off_25.png</img></inactive>
+        <active s="0">test<img x="12" y="-1" w="43" h="43">transports_grey_power_on_25.png</img></active>
+      </btn>
+      <txt j="0" x="115" y="561" w="90" h="64" t="text_c_sml" wrap="False" l="0">J: 0
+Sim: 1
+Cmd Repeat
+No Stretch</txt>
+      <btn j="100" x="216" y="507" w="90" h="50" t="btn_image" flip="None" sim="0" l="0" s="0" js="CF.getJoin(CF.GlobalTokensJoin, function(j,v,t){CF.setToken(CF.GlobalTokensJoin, &quot;counter&quot;, parseInt(t[&quot;counter&quot;], 10)+1); CF.setJoin(&quot;s100&quot;, parseInt(t[&quot;counter&quot;], 10)+1);});">
+        <inactive s="0">
+          <img x="22" y="3" w="43" h="43">transports_grey_power_off_25.png</img>
+        </inactive>
+        <active s="0">test<img x="22" y="3" w="43" h="43">transports_grey_power_on_25.png</img></active>
+      </btn>
+      <txt j="0" x="215" y="561" w="90" h="64" t="text_c_sml" wrap="False" l="0">J: 100
+Sim: 0
+JS
+Stretch</txt>
+      <btn j="100" x="316" y="507" w="90" h="50" t="btn_image" flip="None" sim="1" l="0" s="0">
+        <actions>
+          <action>
+            <press delay="1000" hold="0" repeat="0" js="CF.getJoin(CF.GlobalTokensJoin, function(j,v,t){CF.setToken(CF.GlobalTokensJoin, &quot;counter&quot;, parseInt(t[&quot;counter&quot;], 10)+1); CF.setJoin(&quot;s100&quot;, parseInt(t[&quot;counter&quot;], 10)+1);});" />
+          </action>
+        </actions>
+        <inactive s="0">
+          <img x="22" y="3" w="43" h="43">transports_grey_power_off_25.png</img>
+        </inactive>
+        <active s="0">test<img x="22" y="3" w="43" h="43">transports_grey_power_on_25.png</img></active>
+      </btn>
+      <txt j="0" x="315" y="561" w="90" h="64" t="text_c_sml" wrap="False" l="0">J: 100
+Sim: 1
+adv press dly
+Stretch</txt>
+      <btn j="100" x="426" y="507" w="110" h="43" t="btn_image_stretchy" flip="None" sim="0" l="0" s="0" js="CF.getJoin(CF.GlobalTokensJoin, function(j,v,t){CF.setToken(CF.GlobalTokensJoin, &quot;counter&quot;, parseInt(t[&quot;counter&quot;], 10)+1); CF.setJoin(&quot;s100&quot;, parseInt(t[&quot;counter&quot;], 10)+1);});">
+        <inactive s="0">
+          <img x="33" y="-1" w="43" h="43">transports_grey_power_off_25.png</img>
+        </inactive>
+        <active s="0">test<img x="33" y="-1" w="43" h="43">transports_grey_power_on_25.png</img></active>
+      </btn>
+      <txt j="0" x="425" y="561" w="110" h="64" t="text_c_sml" wrap="False" l="0">J: 100
+Sim: 0
+JS
+Stretch H</txt>
+      <btn j="100" x="546" y="507" w="110" h="50" t="btn_image_stretchy" flip="None" sim="1" l="0" s="0">
+        <actions>
+          <action>
+            <press delay="0" hold="1000" repeat="150" js="CF.getJoin(CF.GlobalTokensJoin, function(j,v,t){CF.setToken(CF.GlobalTokensJoin, &quot;counter&quot;, parseInt(t[&quot;counter&quot;], 10)+1); CF.setJoin(&quot;s100&quot;, parseInt(t[&quot;counter&quot;], 10)+1);});" />
+          </action>
+        </actions>
+        <inactive s="0">          test<img x="15" y="3" w="43" h="43">transports_grey_power_off_25.png</img></inactive>
+        <active s="0">          test<img x="15" y="3" w="43" h="43">transports_grey_power_on_25.png</img></active>
+      </btn>
+      <txt j="0" x="545" y="561" w="110" h="64" t="text_c_sml" wrap="False" l="0">J: 100
+Sim: 1
+adv press hold rpt
+Stretch H+V</txt>
+      <btn j="0" x="696" y="981" w="72" h="43" t="btn_image" flip="Startup" sim="1" l="0" s="1">
+        <inactive s="0">BACK</inactive>
+        <active s="0">BACK</active>
+      </btn>
+    </portrait>
+    <landscape t="SolidColor" />
+  </page>
+  <page name="Startup" j="0" transition="" subtype="" time="0" ease="" start="1">
+    <portrait t="bg_image">
+      <btn j="0" x="16" y="57" w="72" h="43" t="btn_image" flip="Buttons_1" sim="1" l="0" s="1">
+        <inactive s="0">Page 1</inactive>
+        <active s="0">Page 1</active>
+      </btn>
+      <txt j="0" x="15" y="11" w="171" h="44" t="text_l" wrap="False" l="0">Buttons</txt>
+      <btn j="0" x="116" y="57" w="72" h="43" t="btn_image" flip="None" sim="1" l="0" s="1">
+        <inactive s="0">Page 2</inactive>
+        <active s="0">Page 2</active>
+      </btn>
+      <btn j="0" x="16" y="147" w="72" h="43" t="btn_image" flip="Sliders_1" sim="1" l="0" s="1">
+        <inactive s="0">Page 1</inactive>
+        <active s="0">Page 1</active>
+      </btn>
+      <txt j="0" x="15" y="101" w="171" h="44" t="text_l" wrap="False" l="0">Sliders</txt>
+      <btn j="0" x="116" y="147" w="72" h="43" t="btn_image" flip="None" sim="1" l="0" s="1">
+        <inactive s="0">Page 2</inactive>
+        <active s="0">Page 2</active>
+      </btn>
+    </portrait>
+    <landscape t="SolidColor" />
+  </page>
+  <page name="Sliders_1" j="0" transition="" subtype="" time="0" ease="">
+    <portrait t="bg_image">
+      <txt j="0" x="15" y="11" w="753" h="44" t="text_l" wrap="False" l="0">Sliders, No Indicators, No Actions, [0,100]</txt>
+      <txt j="0" x="15" y="51" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 0
+Sim: 0</txt>
+      <txt j="0" x="15" y="111" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 0
+Sim: 1</txt>
+      <txt j="0" x="15" y="170" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 200
+Sim: 0
+Invert</txt>
+      <txt j="0" x="15" y="230" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 200
+Sim: 1</txt>
+      <txt j="0" x="615" y="21" w="90" h="28" t="text_r_sml" wrap="False" l="0">Level:</txt>
+      <txt j="200" x="715" y="21" w="50" h="28" t="text_l_sml" wrap="False" l="0">0</txt>
+      <slider j="0" d="0" x="112" y="62" w="210" h="23" min="0" max="100" decimals="0" unit="decimal" t="horizontal_bothimages" sim="0" l="0" />
+      <slider j="0" d="0" x="112" y="121" w="210" h="23" min="0" max="100" decimals="0" unit="decimal" t="horizontal_bothimages" sim="1" l="0" />
+      <slider j="200" d="0" x="112" y="181" w="210" h="23" min="0" max="100" decimals="0" unit="decimal" t="horizontal_bothimages" invert="1" sim="0" l="0" />
+      <slider j="200" d="0" x="112" y="240" w="210" h="23" min="0" max="100" decimals="0" unit="decimal" t="horizontal_bothimages" sim="1" l="0" />
+      <slider j="0" d="0" x="369" y="70" w="23" h="210" min="0" max="100" decimals="0" unit="decimal" t="vertical_bothimages" sim="0" l="0" />
+      <slider j="0" d="0" x="435" y="70" w="23" h="210" min="0" max="100" decimals="0" unit="decimal" t="vertical_bothimages" sim="1" l="0" />
+      <slider j="200" d="0" x="567" y="70" w="23" h="210" min="0" max="100" decimals="0" unit="decimal" t="vertical_bothimages" sim="1" l="0" />
+      <slider j="200" d="0" x="501" y="70" w="23" h="210" min="0" max="100" decimals="0" unit="decimal" t="vertical_bothimages" invert="1" sim="1" l="0" />
+      <txt j="0" x="15" y="281" w="753" h="44" t="text_l" wrap="False" l="0">Sliders, Indicators, No Actions, [-100,100]</txt>
+      <txt j="0" x="15" y="321" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 0
+Sim: 1
+Inactive Only</txt>
+      <txt j="0" x="15" y="381" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 0
+Sim: 1
+Active Only</txt>
+      <txt j="0" x="15" y="440" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 200
+Sim: 0
+Invert, Inactive</txt>
+      <txt j="0" x="15" y="500" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 200
+Sim: 1
+Active Only</txt>
+      <slider j="0" d="0" x="112" y="332" w="210" h="23" min="-100" max="100" decimals="0" unit="decimal" t="horizontal_bothimages" sim="1" l="0">
+        <indicator state="0" offsetX="0" offsetY="0" x="0" y="0" w="0" h="0" t="">indicator_off.png</indicator>
+      </slider>
+      <slider j="0" d="0" x="112" y="391" w="210" h="23" min="-100" max="100" decimals="0" unit="decimal" t="horizontal_bothimages" sim="1" l="0">
+        <indicator state="1" offsetX="0" offsetY="-14" x="0" y="0" w="40" h="24" t="text_c_sml">indicator_h_on.png</indicator>
+      </slider>
+      <slider j="200" d="0" x="112" y="451" w="210" h="23" min="-100" max="100" decimals="0" unit="decimal" t="horizontal_bothimages" invert="1" sim="0" l="0">
+        <indicator state="0" offsetX="0" offsetY="0" x="0" y="0" w="0" h="0" t="">indicator_off.png</indicator>
+      </slider>
+      <slider j="200" d="0" x="112" y="510" w="210" h="23" min="-100" max="100" decimals="0" unit="decimal" t="horizontal_bothimages" sim="1" l="0">
+        <indicator state="1" offsetX="0" offsetY="-14" x="0" y="0" w="40" h="24" t="text_c_sml">indicator_h_on.png</indicator>
+      </slider>
+      <slider j="0" d="0" x="369" y="340" w="23" h="210" min="-100" max="100" decimals="0" unit="decimal" t="vertical_bothimages" sim="0" l="0">
+        <indicator state="0" offsetX="0" offsetY="0" x="0" y="0" w="0" h="0" t="">indicator_off.png</indicator>
+      </slider>
+      <slider j="0" d="0" x="435" y="340" w="23" h="210" min="-100" max="100" decimals="0" unit="decimal" t="vertical_bothimages" sim="1" l="0">
+        <indicator state="1" offsetX="23" offsetY="0" x="27" y="0" w="40" h="24" t="text_c_sml">indicator_v_on.png</indicator>
+      </slider>
+      <slider j="200" d="0" x="567" y="340" w="23" h="210" min="-100" max="100" decimals="0" unit="decimal" t="vertical_bothimages" sim="1" l="0">
+        <indicator state="1" offsetX="23" offsetY="0" x="27" y="0" w="40" h="24" t="text_c_sml">indicator_v_on.png</indicator>
+      </slider>
+      <slider j="200" d="0" x="501" y="340" w="23" h="210" min="-100" max="100" decimals="0" unit="decimal" t="vertical_bothimages" invert="1" sim="1" l="0">
+        <indicator state="0" offsetX="0" offsetY="0" x="0" y="0" w="0" h="0" t="">indicator_off.png</indicator>
+      </slider>
+      <txt j="0" x="15" y="551" w="753" h="44" t="text_l" wrap="False" l="0">Sliders, Indicators, Decimal Command, [100,-100]</txt>
+      <txt j="0" x="15" y="591" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 0, Sim: 1
+Cmd Press
+200%</txt>
+      <txt j="0" x="15" y="651" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 0
+Sim: 1
+Cmd Release</txt>
+      <txt j="0" x="10" y="710" w="100" h="44" t="text_c_sml" wrap="False" l="0">J: 200, Sim: 1
+Invert, Cmd Drag
+50%</txt>
+      <txt j="0" x="15" y="770" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 200
+Sim: 1
+All Cmds</txt>
+      <slider j="0" d="0" x="112" y="602" w="210" h="23" min="100" max="-100" decimals="0" pressCmd="SliderLevel" unit="decimal" t="horizontal_bothimages" sim="1" l="0">
+        <indicator state="0" offsetX="0" offsetY="0" x="0" y="0" w="0" h="0" t="">indicator_off.png</indicator>
+        <indicator state="1" offsetX="0" offsetY="0" zoom="200" />
+      </slider>
+      <slider j="0" d="0" x="112" y="661" w="210" h="23" min="100" max="-100" decimals="0" releaseCmd="SliderLevel" unit="decimal" t="horizontal_bothimages" sim="1" l="0">
+        <indicator state="0" offsetX="0" offsetY="0" x="0" y="0" w="0" h="0" t="">indicator_off.png</indicator>
+        <indicator state="1" offsetX="0" offsetY="-14" x="0" y="0" w="40" h="24" t="text_c_sml">indicator_h_on.png</indicator>
+      </slider>
+      <slider j="200" d="0" x="112" y="721" w="210" h="23" min="100" max="-100" decimals="0" dragCmd="SliderLevel" unit="decimal" t="horizontal_bothimages" invert="1" sim="1" l="0">
+        <indicator state="0" offsetX="0" offsetY="0" x="0" y="0" w="0" h="0" t="">indicator_off.png</indicator>
+        <indicator state="1" offsetX="0" offsetY="0" zoom="50" />
+      </slider>
+      <slider j="200" d="0" x="112" y="780" w="210" h="23" min="100" max="-100" decimals="0" pressCmd="SliderLevel" dragCmd="SliderLevel" releaseCmd="SliderLevel" unit="decimal" t="horizontal_bothimages" sim="1" l="0">
+        <indicator state="0" offsetX="0" offsetY="0" x="0" y="0" w="0" h="0" t="">indicator_off.png</indicator>
+        <indicator state="1" offsetX="0" offsetY="-14" x="0" y="0" w="40" h="24" t="text_c_sml">indicator_h_on.png</indicator>
+      </slider>
+      <slider j="0" d="0" x="369" y="610" w="23" h="210" min="100" max="-100" decimals="0" pressCmd="SliderLevel" unit="decimal" t="vertical_bothimages" sim="0" l="0">
+        <indicator state="0" offsetX="0" offsetY="0" x="0" y="0" w="0" h="0" t="">indicator_off.png</indicator>
+      </slider>
+      <slider j="0" d="0" x="435" y="610" w="23" h="210" min="100" max="-100" decimals="0" releaseCmd="SliderLevel" unit="decimal" t="vertical_bothimages" sim="1" l="0">
+        <indicator state="0" offsetX="0" offsetY="0" x="0" y="0" w="0" h="0" t="">indicator_off.png</indicator>
+        <indicator state="1" offsetX="0" offsetY="0" zoom="200" />
+      </slider>
+      <slider j="200" d="0" x="567" y="610" w="23" h="210" min="-100" max="100" decimals="0" pressCmd="SliderLevel" dragCmd="SliderLevel" releaseCmd="SliderLevel" unit="decimal" t="vertical_bothimages" sim="1" l="0">
+        <indicator state="0" offsetX="0" offsetY="0" x="0" y="0" w="0" h="0" t="">indicator_off.png</indicator>
+        <indicator state="1" offsetX="23" offsetY="-1" x="27" y="0" w="40" h="24" t="text_c_sml">indicator_v_on.png</indicator>
+      </slider>
+      <slider j="200" d="0" x="501" y="610" w="23" h="210" min="100" max="-100" decimals="0" dragCmd="SliderLevel" unit="decimal" t="vertical_bothimages" invert="1" sim="1" l="0">
+        <indicator state="0" offsetX="0" offsetY="0" x="0" y="0" w="0" h="0" t="">indicator_off.png</indicator>
+        <indicator state="1" offsetX="0" offsetY="0" zoom="50" />
+      </slider>
+      <btn j="0" x="696" y="981" w="72" h="43" t="btn_image" flip="Startup" sim="1" l="0" s="1">
+        <inactive s="0">BACK</inactive>
+        <active s="0">BACK</active>
+      </btn>
+      <txt j="0" x="15" y="830" w="90" h="44" t="text_c_sml" wrap="False" l="0">J: 200, Sim: 1
+All Cmds
+Scaled</txt>
+      <slider j="200" d="0" x="112" y="840" w="474" h="40" min="100" max="-100" decimals="0" pressCmd="SliderLevel" dragCmd="SliderLevel" releaseCmd="SliderLevel" unit="decimal" t="horizontal_bothimages" sim="1" l="0">
+        <indicator state="0" offsetX="0" offsetY="0" x="0" y="0" w="0" h="0" t="">indicator_off.png</indicator>
+        <indicator state="1" offsetX="0" offsetY="-14" x="0" y="0" w="40" h="24" t="text_c_sml">indicator_h_on.png</indicator>
+      </slider>
+      <slider j="200" d="0" x="637" y="610" w="24" h="107" min="-100" max="100" decimals="0" pressCmd="SliderLevel" dragCmd="SliderLevel" releaseCmd="SliderLevel" unit="decimal" t="vertical_bothimages" sim="1" l="0">
+        <indicator state="0" offsetX="0" offsetY="0" x="0" y="0" w="0" h="0" t="">indicator_off.png</indicator>
+        <indicator state="1" offsetX="23" offsetY="-1" x="27" y="0" w="40" h="24" t="text_c_sml">indicator_v_on.png</indicator>
+      </slider>
+    </portrait>
+    <landscape t="SolidColor" />
+  </page>
+</gui>
