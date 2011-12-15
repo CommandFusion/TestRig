@@ -19,6 +19,10 @@
       <cmd name="TestJoinValueAssignment" target="d17931" value="1">1</cmd>
       <cmd name="CounterIncrement">count={{counter+1}}</cmd>
       <cmd name="SliderLevel">level=[sliderval]</cmd>
+      <cmd name="ChangeImage302" target="s302" value="http://lorempixel.com/110/110/nature/9"> </cmd>
+      <cmd name="ChangeImage303" target="s303" value="http://lorempixel.com/110/110/nature/10"> </cmd>
+      <cmd name="ChangeImage304">s304=http://lorempixel.com/110/110/nature/1</cmd>
+      <cmd name="ChangeImage305" js="CF.setJoin(&quot;s305&quot;, &quot;http://lorempixel.com/110/110/nature/2&quot;);" jsSendsCommand="True"> </cmd>
       <fb name="CounterFB" regex="count=(\d+)">
         <group index="1" name="" datatype="s" target="s100" />
         <group index="1" name="counter" datatype="s" target="e0" settoken="1" />
@@ -28,6 +32,15 @@
       </fb>
     </system>
   </systems>
+  <macros>
+    <macro name="Change303">
+      <command delay="2000">ChangeImage303</command>
+    </macro>
+    <macro name="Change304_305">
+      <command delay="500">ChangeImage304</command>
+      <command delay="2000">ChangeImage305</command>
+    </macro>
+  </macros>
   <themes>
     <theme type="background" name=".SolidColor"><![CDATA[background-color: #008080;]]></theme>
     <theme type="background" name=".bg_image"><![CDATA[ background-image: url(bg_portrait.png); background-repeat: no-repeat;]]></theme>
@@ -265,6 +278,11 @@ Stretch H+V</txt>
         <inactive s="0">Page 2</inactive>
         <active s="0">Page 2</active>
       </btn>
+      <btn j="0" x="16" y="237" w="72" h="43" t="btn_image" flip="Images_1" sim="1" l="0" s="1">
+        <inactive s="0">Page 1</inactive>
+        <active s="0">Page 1</active>
+      </btn>
+      <txt j="0" x="15" y="191" w="171" h="44" t="text_l" wrap="False" l="0">Images</txt>
     </portrait>
     <landscape t="SolidColor" />
   </page>
@@ -388,5 +406,127 @@ Scaled</txt>
       </slider>
     </portrait>
     <landscape t="SolidColor" />
+  </page>
+  <page name="Images_1" j="0" transition="" subtype="" time="0" ease="">
+    <portrait t="bg_image">
+      <btn j="0" x="636" y="417" w="72" h="80" t="btn_image" flip="None" sim="1" l="0" s="1">
+        <inactive s="0">CLICK</inactive>
+        <active s="0">CLICK</active>
+      </btn>
+      <txt j="0" x="15" y="11" w="743" h="44" t="text_l" wrap="False" l="0">Static Images, Cached</txt>
+      <img x="17" y="59" w="110" h="110" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0" />
+      <img x="137" y="59" w="110" h="110" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">img.png</img>
+      <img x="257" y="59" w="110" h="110" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">img.jpg</img>
+      <img x="377" y="59" w="110" h="110" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">img.gif</img>
+      <img x="497" y="59" w="110" h="110" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">img.bmp</img>
+      <img x="617" y="59" w="110" h="110" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">img.tif</img>
+      <btn j="0" x="696" y="981" w="72" h="43" t="btn_image" flip="Startup" sim="1" l="0" s="1">
+        <inactive s="0">BACK</inactive>
+        <active s="0">BACK</active>
+      </btn>
+      <txt j="0" x="27" y="169" w="90" h="44" t="text_c_sml" wrap="False" l="0">None</txt>
+      <txt j="0" x="147" y="169" w="90" h="44" t="text_c_sml" wrap="False" l="0">PNG</txt>
+      <txt j="0" x="267" y="169" w="90" h="44" t="text_c_sml" wrap="False" l="0">JPG</txt>
+      <txt j="0" x="387" y="169" w="90" h="44" t="text_c_sml" wrap="False" l="0">GIF</txt>
+      <txt j="0" x="507" y="169" w="90" h="44" t="text_c_sml" wrap="False" l="0">BMP</txt>
+      <txt j="0" x="627" y="169" w="90" h="44" t="text_c_sml" wrap="False" l="0">TIFF</txt>
+      <txt j="0" x="15" y="201" w="353" h="44" t="text_l" wrap="False" l="0">Static Images</txt>
+      <img x="17" y="249" w="110" h="110" j="0" clickthrough="0" refresh="0" l="0" noCache="1" downloadIndicator="0" clearOnURLChange="0">img2.png</img>
+      <img x="137" y="249" w="110" h="110" j="0" clickthrough="0" refresh="0" l="0" noCache="1" downloadIndicator="1" clearOnURLChange="0">img3.png</img>
+      <btn j="0" x="277" y="217" w="72" h="80" t="btn_image" flip="None" sim="1" l="0" s="1">
+        <inactive s="0">CLICK</inactive>
+        <active s="0">CLICK</active>
+      </btn>
+      <img x="257" y="249" w="110" h="110" j="0" clickthrough="1" refresh="0" l="0" noCache="0" downloadIndicator="1" clearOnURLChange="0">img4.png</img>
+      <btn j="0" x="36" y="795" w="72" h="43" t="btn_image" flip="None" sim="1" l="0" s="1" js="CF.setJoin(&quot;s300&quot;, &quot;http://lorempixel.com/110/110/nature/7&quot;);">
+        <inactive s="0">change
+js</inactive>
+        <active s="0">change
+js</active>
+      </btn>
+      <txt j="0" x="27" y="359" w="90" h="44" t="text_c_sml" wrap="False" l="0">No Cache</txt>
+      <txt j="0" x="147" y="359" w="90" h="44" t="text_c_sml" wrap="False" l="0">Show Load
+No Cache</txt>
+      <txt j="0" x="267" y="359" w="90" h="44" t="text_c_sml" wrap="False" l="0">Show Load
+Caching
+Clickthrough</txt>
+      <txt j="0" x="15" y="401" w="743" h="44" t="text_l" wrap="False" l="0">HTTP Images, zero joins</txt>
+      <img x="17" y="449" w="110" h="110" j="0" clickthrough="0" refresh="0" l="0" noCache="1" downloadIndicator="1" clearOnURLChange="1">http://lorempixel.com/110/110/nature/1</img>
+      <img x="137" y="449" w="110" h="110" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="1" clearOnURLChange="1">http://lorempixel.com/110/110/nature/2</img>
+      <img x="257" y="449" w="110" h="110" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="1">http://lorempixel.com/110/110/nature/3</img>
+      <img x="377" y="449" w="110" h="110" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">http://lorempixel.com/110/110/nature/4</img>
+      <img x="497" y="449" w="110" h="110" j="0" clickthrough="0" refresh="0" l="0" noCache="1" downloadIndicator="0" clearOnURLChange="0">http://lorempixel.com/110/110/nature/5</img>
+      <img x="617" y="449" w="110" h="110" j="0" clickthrough="1" refresh="0" l="0" noCache="1" downloadIndicator="0" clearOnURLChange="0">http://lorempixel.com/110/110/nature/6</img>
+      <txt j="0" x="27" y="559" w="90" h="44" t="text_c_sml" wrap="False" l="0">No Caching
+Show Loading
+Clear on change</txt>
+      <txt j="0" x="147" y="559" w="90" h="44" t="text_c_sml" wrap="False" l="0">Caching
+Show Loading
+Clear on change</txt>
+      <txt j="0" x="267" y="559" w="90" h="44" t="text_c_sml" wrap="False" l="0">Caching
+No Loading
+Clear on change</txt>
+      <txt j="0" x="387" y="559" w="90" h="44" t="text_c_sml" wrap="False" l="0">Caching
+No Loading</txt>
+      <txt j="0" x="507" y="559" w="90" h="44" t="text_c_sml" wrap="False" l="0">No Caching
+No Loading</txt>
+      <txt j="0" x="627" y="559" w="90" h="44" t="text_c_sml" wrap="False" l="0">No Caching
+No Loading
+Clickthrough</txt>
+      <btn j="0" x="636" y="617" w="72" h="80" t="btn_image" flip="None" sim="1" l="0" s="1">
+        <inactive s="0">CLICK</inactive>
+        <active s="0">CLICK</active>
+      </btn>
+      <txt j="0" x="15" y="601" w="743" h="44" t="text_l" wrap="False" l="0">Same as above, with joins as noted</txt>
+      <img x="17" y="649" w="110" h="110" j="300" clickthrough="0" refresh="0" l="0" noCache="1" downloadIndicator="1" clearOnURLChange="1">http://lorempixel.com/110/110/nature/1</img>
+      <img x="137" y="649" w="110" h="110" j="301" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="1" clearOnURLChange="1">http://lorempixel.com/110/110/nature/2</img>
+      <img x="257" y="649" w="110" h="110" j="302" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="1">http://lorempixel.com/110/110/nature/3</img>
+      <img x="377" y="649" w="110" h="110" j="303" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">http://lorempixel.com/110/110/nature/4</img>
+      <img x="497" y="649" w="110" h="110" j="304" clickthrough="0" refresh="0" l="0" noCache="1" downloadIndicator="0" clearOnURLChange="0">http://lorempixel.com/110/110/nature/5</img>
+      <img x="617" y="649" w="110" h="110" j="305" clickthrough="1" refresh="0" l="0" noCache="1" downloadIndicator="0" clearOnURLChange="0">http://lorempixel.com/110/110/nature/6</img>
+      <txt j="0" x="27" y="759" w="90" h="44" t="text_c_sml" wrap="False" l="0">Join 300</txt>
+      <txt j="0" x="147" y="759" w="90" h="44" t="text_c_sml" wrap="False" l="0">Join 301</txt>
+      <txt j="0" x="267" y="759" w="90" h="44" t="text_c_sml" wrap="False" l="0">Join 302</txt>
+      <txt j="0" x="387" y="759" w="90" h="44" t="text_c_sml" wrap="False" l="0">Join 303</txt>
+      <txt j="0" x="507" y="759" w="90" h="44" t="text_c_sml" wrap="False" l="0">Join 304</txt>
+      <txt j="0" x="627" y="759" w="90" h="44" t="text_c_sml" wrap="False" l="0">Join 305</txt>
+      <btn j="0" x="156" y="795" w="72" h="43" t="btn_image" flip="None" sim="1" l="0" s="1" js="CF.setJoin(&quot;s301&quot;, &quot;http://lorempixel.com/110/110/nature/7&quot;);">
+        <inactive s="0">change
+js</inactive>
+        <active s="0">change
+js</active>
+      </btn>
+      <btn j="0" x="276" y="795" w="72" h="43" t="btn_image" flip="None" sim="1" l="0" s="1" cmd="ChangeImage302">
+        <inactive s="0">change
+cmd</inactive>
+        <active s="0">change
+cmd</active>
+      </btn>
+      <btn j="0" x="396" y="795" w="72" h="43" t="btn_image" flip="None" sim="1" l="0" s="1" macro="Change303">
+        <inactive s="0">change
+macro</inactive>
+        <active s="0">change
+macro</active>
+      </btn>
+      <btn j="0" x="575" y="795" w="72" h="43" t="btn_image" flip="None" sim="1" l="0" s="1" macro="Change304_305">
+        <inactive s="0">change
+macro</inactive>
+        <active s="0">change
+macro</active>
+      </btn>
+      <img x="377" y="249" w="110" h="110" j="0" clickthrough="0" refresh="1000" l="0" noCache="1" downloadIndicator="1" clearOnURLChange="1">http://lorempixel.com/110/110/nature</img>
+      <txt j="0" x="387" y="359" w="90" h="44" t="text_c_sml" wrap="False" l="0">Show Load
+No Cache
+Clear on change</txt>
+      <txt j="0" x="375" y="201" w="353" h="44" t="text_l" wrap="False" l="0">Auto-Refreshing Images</txt>
+      <img x="497" y="249" w="110" h="110" j="0" clickthrough="0" refresh="500" l="0" noCache="1" downloadIndicator="1" clearOnURLChange="0">http://lorempixel.com/110/110/sport</img>
+      <txt j="0" x="507" y="359" w="90" h="44" t="text_c_sml" wrap="False" l="0">Show Load
+No Cache</txt>
+      <img x="617" y="249" w="110" h="110" j="0" clickthrough="0" refresh="500" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="1">http://lorempixel.com/110/110/city</img>
+      <txt j="0" x="627" y="359" w="90" h="44" t="text_c_sml" wrap="False" l="0">No Load
+Cache
+Clear on change</txt>
+    </portrait>
+    <landscape />
   </page>
 </gui>
