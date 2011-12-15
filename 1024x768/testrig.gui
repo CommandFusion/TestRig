@@ -477,11 +477,11 @@ Clickthrough</txt>
         <inactive s="0">CLICK</inactive>
         <active s="0">CLICK</active>
       </btn>
-      <txt j="0" x="15" y="601" w="743" h="44" t="text_l" wrap="False" l="0">Same as above, with joins as noted</txt>
+      <txt j="0" x="15" y="601" w="743" h="44" t="text_l" wrap="False" l="0">Same as above, with joins as noted, no caching</txt>
       <img x="17" y="649" w="110" h="110" j="300" clickthrough="0" refresh="0" l="0" noCache="1" downloadIndicator="1" clearOnURLChange="1">http://lorempixel.com/110/110/nature/1</img>
-      <img x="137" y="649" w="110" h="110" j="301" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="1" clearOnURLChange="1">http://lorempixel.com/110/110/nature/2</img>
-      <img x="257" y="649" w="110" h="110" j="302" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="1">http://lorempixel.com/110/110/nature/3</img>
-      <img x="377" y="649" w="110" h="110" j="303" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">http://lorempixel.com/110/110/nature/4</img>
+      <img x="137" y="649" w="110" h="110" j="301" clickthrough="0" refresh="0" l="0" noCache="1" downloadIndicator="1" clearOnURLChange="1">http://lorempixel.com/110/110/nature/2</img>
+      <img x="257" y="649" w="110" h="110" j="302" clickthrough="0" refresh="0" l="0" noCache="1" downloadIndicator="0" clearOnURLChange="1">http://lorempixel.com/110/110/nature/3</img>
+      <img x="377" y="649" w="110" h="110" j="303" clickthrough="0" refresh="0" l="0" noCache="1" downloadIndicator="0" clearOnURLChange="0">http://lorempixel.com/110/110/nature/4</img>
       <img x="497" y="649" w="110" h="110" j="304" clickthrough="0" refresh="0" l="0" noCache="1" downloadIndicator="0" clearOnURLChange="0">http://lorempixel.com/110/110/nature/5</img>
       <img x="617" y="649" w="110" h="110" j="305" clickthrough="1" refresh="0" l="0" noCache="1" downloadIndicator="0" clearOnURLChange="0">http://lorempixel.com/110/110/nature/6</img>
       <txt j="0" x="27" y="759" w="90" h="44" t="text_c_sml" wrap="False" l="0">Join 300</txt>
@@ -526,6 +526,15 @@ No Cache</txt>
       <txt j="0" x="627" y="359" w="90" h="44" t="text_c_sml" wrap="False" l="0">No Load
 Cache
 Clear on change</txt>
+      <btn j="0" x="137" y="943" w="72" h="43" t="btn_image" flip="None" sim="1" l="0" s="1" js="CF.setJoin(&quot;s306&quot;, &quot;http://lorempixel.com/110/110/fashion&quot;);">
+        <inactive s="0">change
+js</inactive>
+        <active s="0">change
+js</active>
+      </btn>
+      <img x="17" y="879" w="110" h="110" j="300" clickthrough="0" refresh="0" l="0" noCache="1" downloadIndicator="1" clearOnURLChange="1">http://lorempixel.com/110/110/technics</img>
+      <txt j="0" x="128" y="887" w="90" h="44" t="text_c_sml" wrap="False" l="0">Join 306
+Autorefresh</txt>
     </portrait>
     <landscape />
   </page>
