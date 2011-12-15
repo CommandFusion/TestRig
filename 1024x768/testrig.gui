@@ -532,7 +532,7 @@ js</inactive>
         <active s="0">change
 js</active>
       </btn>
-      <img x="17" y="879" w="110" h="110" j="300" clickthrough="0" refresh="0" l="0" noCache="1" downloadIndicator="1" clearOnURLChange="1">http://lorempixel.com/110/110/technics</img>
+      <img x="17" y="879" w="110" h="110" j="306" clickthrough="0" refresh="1000" l="0" noCache="1" downloadIndicator="1" clearOnURLChange="1">http://lorempixel.com/110/110/technics</img>
       <txt j="0" x="128" y="887" w="90" h="44" t="text_c_sml" wrap="False" l="0">Join 306
 Autorefresh</txt>
     </portrait>
